@@ -1,0 +1,56 @@
+:root {
+  --background: #f0f4f8;
+  --foreground: #101828;
+  --card: #ffffff;
+  --card-foreground: #101828;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #101828;
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #2563eb;
+}
+
+.dark {
+  --background: #0b0f19;
+  --foreground: #f8fafc;
+  --card: #111827;
+  --card-foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2937;
+  --secondary-foreground: #f8fafc;
+  --border: #374151;
+  --input: #374151;
+  --ring: #3b82f6;
+}
+
+body, html {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Evitiamo il testo invisibile forzando i colori corretti */
+p, span, div, label, input, textarea {
+  color: var(--foreground) !important;
+}
+
+div[class*="MuiPaper-root"], div[class*="chakra-"], .MuiCard-root {
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+}
+
+/* Schiariamo i box di input e la barra di scrittura nel tema scuro */
+input, textarea, [contenteditable="true"], div[class*="MuiInputBase-root"] {
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+  border-color: var(--border) !important;
+}
+
+/* Evidenziamo il bordo con il blu elettrico quando scrivi */
+input:focus, textarea:focus, [contenteditable="true"]:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px var(--ring) !important;
+}
